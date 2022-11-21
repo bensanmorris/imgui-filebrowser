@@ -80,6 +80,9 @@ namespace ImGui
         // selected filename will be returned
         std::filesystem::path GetSelected() const;
 
+        // return selected filename as string.
+        std::string GetSelectedAsString() const;
+
         // returns all selected filenames.
         // when ImGuiFileBrowserFlags_MultipleSelection is enabled, use this
         // instead of GetSelected
@@ -717,6 +720,11 @@ inline std::filesystem::path ImGui::FileBrowser::GetSelected() const
         return pwd_;
     }
     return pwd_ / *selectedFilenames_.begin();
+}
+
+inline std::string ImGui::FileBrowser::GetSelectedAsString() const
+{
+    return GetSelected();
 }
 
 inline std::vector<std::filesystem::path>
