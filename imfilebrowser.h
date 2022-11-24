@@ -724,7 +724,7 @@ inline std::filesystem::path ImGui::FileBrowser::GetSelected() const
 
 inline std::string ImGui::FileBrowser::GetSelectedAsString() const
 {
-    return GetSelected();
+    return GetSelected().string();
 }
 
 inline std::vector<std::filesystem::path>
